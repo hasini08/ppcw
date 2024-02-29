@@ -179,11 +179,3 @@ fi
 
 # Clean up the temp files
 rm -f tmp maze_executable
-
-
-
-
-
-
-
-

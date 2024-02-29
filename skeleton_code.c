@@ -94,8 +94,3 @@ int check_win_condition(const Maze *maze) {
     // Check if the player's coordinates match the coordinates of the exit in the maze
     // If they match, return 1 , otherwise return 0
 }
-
-
-
-
-
