@@ -30,14 +30,14 @@ int main(int argc, char *argv[]) {
         return 1;
     }
 
-    // Load the maze from the file specified in the command-line argument
+    // Load maze from the file specified in the command-line argument
     load_maze(&maze, argv[1]);
 
     // Main game loop
     while (1) {
         char command;
         
-        // Prompt the player for input
+        // ask the player for input
         printf("Enter your move (WASD or M to view map): ");
         scanf(" %c", &command);
         command = toupper(command); // Convert input to uppercase for case insensitivity
@@ -64,23 +64,37 @@ int main(int argc, char *argv[]) {
 
 // Function to load maze from file
 void load_maze(Maze *maze, const char *filename) {
-    // Implement logic to read the maze from the file
+    // logic to read the maze from the file
+    // Open the file specified by 'filename' for reading
+    // Read the height and width of the maze from the file
+    // Allocate memory for the maze structure based on the height and width
+    // Read each character from the file and populate the maze array
+    // Close the file once reading is complete
 }
 
 // Function to display the map with player's position
 void display_map(const Maze *maze) {
     // Implement logic to display the maze with 'X' marking player's position
+    // Loop through each cell in the maze
+    // If the cell coordinates match the player's coordinates, print 'X'
+    // Otherwise, print the character representing the cell (wall, path, start, or exit)
 }
 
 // Function to move the player within the maze
 void move_player(Maze *maze, char direction) {
     // Implement logic to move the player based on input direction (WASD)
+    // Determine the new coordinates of the player based on the direction
+    // Check if the new coordinates are within the bounds of the maze and not a wall
+    // If valid, update the player's position in the maze
 }
 
 // Function to check if the player has reached the exit
 int check_win_condition(const Maze *maze) {
-    // Implement logic to check if the player's current position is at the exit
+    // apply logic to check if the player's current position is at the exit
+    // Check if the player's coordinates match the coordinates of the exit in the maze
+    // If they match, return 1 , otherwise return 0
 }
+
 
 
 
