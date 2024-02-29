@@ -6,7 +6,7 @@ gcc skelton.c -o maze_executable
 echo -e "~~ Testing Maze Game ~~"
 
 # Test for loading a valid maze file
-echo -n "Testing loading a valid maze file - "
+echo "Testing loading a valid maze file - "
 ./maze_executable valid_maze.txt > tmp
 if grep -q "Successfully loaded maze." tmp;
 then
@@ -16,7 +16,7 @@ else
 fi
 
 # Test for loading a non-existent maze file
-echo -n "Testing loading a non-existent maze file - "
+echo "Testing loading a non-existent maze file - "
 ./maze_executable non_existent_maze.txt > tmp
 if grep -q "Error: Unable to open file." tmp;
 then
@@ -26,7 +26,7 @@ else
 fi
 
 # Test for loading a maze file with invalid format
-echo -n "Testing loading a maze file with invalid format - "
+echo "Testing loading a maze file with invalid format - "
 ./maze_executable invalid_format_maze.txt > tmp
 if grep -q "Error: Invalid maze file format." tmp;
 then
@@ -36,7 +36,7 @@ else
 fi
 
 # Test for loading a maze file with invalid characters
-echo -n "Testing loading a maze file with invalid characters - "
+echo "Testing loading a maze file with invalid characters - "
 ./maze_executable invalid_characters_maze.txt > tmp
 if grep -q "Error: Invalid characters in maze file." tmp;
 then
@@ -46,7 +46,7 @@ else
 fi
 
 # Test for successful navigation through the maze and winning
-echo -n "Testing successful navigation and winning - "
+echo "Testing successful navigation and winning - "
 ./maze_executable valid_maze.txt < input_moves.txt > tmp
 if grep -q "Congratulations! You have won!" tmp;
 then
@@ -56,7 +56,7 @@ else
 fi
 
 # Test for player collision with a wall
-echo -n "Testing player collision with a wall - "
+echo "Testing player collision with a wall - "
 ./maze_executable wall_collision_maze.txt < input_moves.txt > tmp
 if grep -q "Invalid move. Try again." tmp;
 then
@@ -66,7 +66,7 @@ else
 fi
 
 # Test for player trying to move out of bounds
-echo -n "Testing player trying to move out of bounds - "
+echo "Testing player trying to move out of bounds - "
 ./maze_executable out_of_bounds_maze.txt < input_moves.txt > tmp
 if grep -q "Invalid move. Try again." tmp;
 then
@@ -76,7 +76,7 @@ else
 fi
 
 # Test for player quitting the game
-echo -n "Testing player quitting the game - "
+echo "Testing player quitting the game - "
 ./maze_executable valid_maze.txt < quit_input.txt > tmp
 if grep -q "Goodbye!" tmp;
 then
@@ -197,6 +197,7 @@ fi
 
 # Clean up temporary files
 rm -f tmp maze_executable
+
 
 
 
